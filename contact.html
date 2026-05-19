@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Réserver - Diana Explore</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  </head>
+  <body>
+
+    <nav>
+      <a href="index.html" class="nav-logo">🌿 Diana Explore</a>
+      <div class="nav-liens">
+        <a href="index.html">Accueil</a>
+        <a href="circuits.html">Circuits</a>
+        <a href="contact.html">Réserver</a>
+      </div>
+    </nav>
+
+    <div class="page-hero">
+      <h1>Réserver votre Circuit</h1>
+      <p>Remplissez le formulaire et nous vous répondrons sous 72h</p>
+    </div>
+
+    <section class="reservation">
+      <div class="contenu-form">
+
+        <div class="form-card">
+
+          <div class="champ">
+            <label>Nom complet <span class="obligatoire">*</span></label>
+            <input type="text" id="nom" placeholder="Votre nom et prénom">
+          </div>
+
+          <div class="champ">
+            <label>Email <span class="obligatoire">*</span></label>
+            <input type="email" id="email" placeholder="votre@email.com">
+          </div>
+
+          <div class="champ">
+            <label>Téléphone <span class="obligatoire">*</span></label>
+            <input type="tel" id="telephone" placeholder="+261 XX XX XXX XX" maxlength="15">>
+          </div>
+
+          <div class="champ">
+            <label>Circuit souhaité <span class="obligatoire">*</span></label>
+            <select id="circuit">
+              <option value="">-- Choisissez un circuit --</option>
+              <option value="Essentiel - 2 jours - 245€ par pers">🌿 Essentiel — 2 jours — 245€ par pers</option>
+              <option value="Confort - 3 jours - 300€ par pers">⭐ Confort — 3 jours — 300€ par pers</option>
+              <option value="Premium - 5- jours - 1000€par pers">💎 Premium — 5 jours — 1000€ pour pers</option>
+            </select>
+          </div>
+
+          <div class="champ">
+            <label>Sens du circuit <span class="obligatoire">*</span></label>
+            <select id="sens">
+              <option value="">-- Choisissez le sens --</option>
+              <option value="Diego → Ankify">Diego → Ankify</option>
+              <option value="Ankify → Diego">Ankify → Diego</option>
+            </select>
+          </div>
+
+          <div class="champs-ligne">
+            <div class="champ">
+              <label>Nombre d'adultes <span class="obligatoire">*</span></label>
+              <input type="number" id="adultes" min="2" max="10" placeholder="Min. 2">
+            </div>
+            <div class="champ">
+              <label>Enfants -8 ans</label>
+              <input type="number" id="enfants" min="0" max="10" placeholder="0">
+            </div>
+          </div>
+
+          <div class="champ">
+            <label>Date souhaitée <span class="obligatoire">*</span></label>
+            <input type="date" id="date">
+          </div>
+
+          <div class="champ">
+            <label>Message / Demande spéciale</label>
+            <textarea id="message" placeholder="Précisez vos souhaits, contraintes, questions..." rows="4"></textarea>
+          </div>
+
+          <button type="button" onclick="envoyer()">Envoyer ma demande</button>
+
+        </div>
+
+        <div class="form-info">
+          <h3>📋 Informations utiles</h3>
+          <ul>
+            <li>✅ Réponse sous 72h ouvrés</li>
+            <li>✅ Devis gratuit et sans engagement</li>
+            <li>✅ Circuit 100% privé</li>
+            <li>✅ Départ à la date de votre choix</li>
+          </ul>
+
+          <h3>💰 Tarifs</h3>
+          <table class="tarif-table">
+            <tr>
+              <td>Essentiel</td>
+              <td><strong>245€/pers</strong></td>
+            </tr>
+            <tr>
+              <td>Confort</td>
+              <td><strong>300€/pers</strong></td>
+            </tr>
+            <tr>
+              <td>Premium</td>
+              <td><strong>1000€/pers</strong></td>
+            </tr>
+            <tr>
+              <td>Groupe 4+</td>
+              <td><strong>-20€/pers</strong></td>
+            </tr>
+            <tr>
+              <td>Enfant -8 ans</td>
+              <td><strong>-40%</strong></td>
+            </tr>
+          </table>
+
+          <div class="contact-direct">
+            <h3>📱 Contact direct</h3>
+            <p>📧 votre@email.com</p>
+            <p>📱 +261 XX XX XXX XX</p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <footer>
+      <div class="contenu">
+        <div class="footer-grille">
+          <div>
+            <h3>🌿 Diana Explore</h3>
+            <p>Circuits privés dans le Nord de Madagascar — Région DIANA</p>
+          </div>
+          <div>
+            <h3>Navigation</h3>
+            <ul>
+              <li><a href="index.html">Accueil</a></li>
+              <li><a href="circuits.html">Circuits</a></li>
+              <li><a href="contact.html">Réserver</a></li>
+            </ul>
+          </div>
+          <div>
+            <h3>Contact</h3>
+            <p>📧 votre@email.com</p>
+            <p>📱 +261 XX XX XXX XX</p>
+          </div>
+        </div>
+        <div class="footer-bas">
+          <p>© 2026 Diana Explore — Tous droits réservés</p>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      function envoyer() {
+        const nom = document.querySelector("#nom").value;
+        const email = document.querySelector("#email").value;
+        const telephone = document.querySelector("#telephone").value;
+        const circuit = document.querySelector("#circuit").value;
+        const sens = document.querySelector("#sens").value;
+        const adultes = document.querySelector("#adultes").value;
+        const date = document.querySelector("#date").value;
+
+        if (!nom || !email || !telephone || !circuit || !sens || !adultes || !date) {
+          alert("Veuillez remplir tous les champs obligatoires !");
+          return;
+        }
+
+        if (telephone.replace(/\s/g, '').length < 8) {
+            alert("Numéro de téléphone invalide !");
+            return;
+}
+        if (adultes < 2) {
+          alert("Le minimum est 2 adultes !");
+          return;
+        }
+
+        alert("Demande envoyée ! Nous vous répondrons sous 24h.");
+      }
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+<script>
+  emailjs.init("nl1h-JAU0kytJBghD");
+
+  function envoyer() {
+    const nom = document.querySelector("#nom").value;
+    const email = document.querySelector("#email").value;
+    const telephone = document.querySelector("#telephone").value;
+    const circuit = document.querySelector("#circuit").value;
+    const sens = document.querySelector("#sens").value;
+    const adultes = document.querySelector("#adultes").value;
+    const enfants = document.querySelector("#enfants").value;
+    const date = document.querySelector("#date").value;
+    const message = document.querySelector("#message").value;
+
+    if (!nom || !email || !telephone || !circuit || !sens || !adultes || !date) {
+      alert("Veuillez remplir tous les champs obligatoires !");
+      return;
+    }
+
+    if (adultes < 2) {
+      alert("Le minimum est 2 adultes !");
+      return;
+    }
+
+    emailjs.send("service_wn5vlvl", "template_2algfxb", {
+      name: nom,
+      email: email,
+      phone: telephone,
+      circuit: circuit,
+      sens: sens,
+      adultes: adultes,
+      enfants: enfants || "0",
+      date: date,
+      message: message || "Aucun message"
+    }).then(function() {
+      alert("Demande envoyée ! Nous vous répondrons sous 72h ouvrés. 🎉");
+      document.querySelector("#nom").value = "";
+      document.querySelector("#email").value = "";
+      document.querySelector("#telephone").value = "";
+      document.querySelector("#circuit").value = "";
+      document.querySelector("#sens").value = "";
+      document.querySelector("#adultes").value = "";
+      document.querySelector("#enfants").value = "";
+      document.querySelector("#date").value = "";
+      document.querySelector("#message").value = "";
+    }).catch(function() {
+      alert("Erreur lors de l'envoi. Réessayez !");
+    });
+  }
+</script>
+
+  </body>
+</html>

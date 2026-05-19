@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - Diana Explore</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  </head>
+  <body>
+
+    <nav>
+      <a href="index.html" class="nav-logo">🌿 Diana Explore</a>
+      <div class="nav-liens">
+        <a href="index.html">Accueil</a>
+        <a href="circuits.html">Circuits</a>
+        <a href="contact-simple.html">Contact</a>
+        <a href="contact.html">Réserver</a>
+      </div>
+    </nav>
+
+    <div class="page-hero">
+      <h1>Contactez-nous</h1>
+      <p>Une question ? Nous vous répondons sous 72h ouvrés</p>
+    </div>
+
+    <section class="reservation">
+      <div class="contenu-form">
+
+        <div class="form-card">
+          <h2 style="color:#1a5c2a; margin-bottom:25px;">Envoyez-nous un message</h2>
+
+          <div class="champ">
+            <label>Nom complet <span class="obligatoire">*</span></label>
+            <input type="text" id="nom" placeholder="Votre nom et prénom">
+          </div>
+
+          <div class="champ">
+            <label>Email <span class="obligatoire">*</span></label>
+            <input type="email" id="email" placeholder="votre@email.com">
+          </div>
+
+          <div class="champ">
+            <label>Téléphone <span class="obligatoire">*</span></label>
+            <div class="tel-groupe">
+              <select id="indicatif">
+                <option value="+261">🇲🇬 +261</option>
+                <option value="+33">🇫🇷 +33</option>
+                <option value="+32">🇧🇪 +32</option>
+                <option value="+41">🇨🇭 +41</option>
+                <option value="+1">🇺🇸 +1</option>
+                <option value="+44">🇬🇧 +44</option>
+                <option value="+212">🇲🇦 +212</option>
+                <option value="+213">🇩🇿 +213</option>
+                <option value="+216">🇹🇳 +216</option>
+                <option value="+221">🇸🇳 +221</option>
+              </select>
+              <input type="tel" id="telephone" placeholder="XX XX XX XX" maxlength="10" pattern="[0-9]{8,10}">
+            </div>
+          </div>
+
+          <div class="champ">
+            <label>Pays <span class="obligatoire">*</span></label>
+            <select id="pays">
+              <option value="">-- Votre pays --</option>
+              <option value="Madagascar">🇲🇬 Madagascar</option>
+              <option value="France">🇫🇷 France</option>
+              <option value="Belgique">🇧🇪 Belgique</option>
+              <option value="Suisse">🇨🇭 Suisse</option>
+              <option value="Canada">🇨🇦 Canada</option>
+              <option value="États-Unis">🇺🇸 États-Unis</option>
+              <option value="Royaume-Uni">🇬🇧 Royaume-Uni</option>
+              <option value="Maroc">🇲🇦 Maroc</option>
+              <option value="Algérie">🇩🇿 Algérie</option>
+              <option value="Tunisie">🇹🇳 Tunisie</option>
+              <option value="Sénégal">🇸🇳 Sénégal</option>
+              <option value="Autre">🌍 Autre</option>
+            </select>
+          </div>
+
+          <div class="champ">
+            <label>Message <span class="obligatoire">*</span></label>
+            <textarea id="message" placeholder="Votre question ou demande..." rows="5"></textarea>
+          </div>
+
+          <button type="button" onclick="envoyer()">Envoyer mon message</button>
+
+        </div>
+
+        <div class="form-info">
+          <h3>📋 Informations</h3>
+          <ul>
+            <li>✅ Réponse sous 72h ouvrés</li>
+            <li>✅ Gratuit et sans engagement</li>
+            <li>✅ Nous parlons français</li>
+          </ul>
+
+          <div class="contact-direct">
+            <h3>📱 Contact direct</h3>
+            <p>📧 votre@email.com</p>
+            <p>📱 +261 XX XX XXX XX</p>
+          </div>
+
+          <div class="contact-direct" style="margin-top:20px;">
+            <h3>🗓️ Prêt à réserver ?</h3>
+            <a href="contact.html" style="display:block; text-align:center; background-color:#1a5c2a; color:white; padding:12px; border-radius:25px; text-decoration:none; font-size:14px; margin-top:10px;">Réserver un circuit</a>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <footer>
+      <div class="contenu">
+        <div class="footer-grille">
+          <div>
+            <h3>🌿 Diana Explore</h3>
+            <p>Circuits privés dans le Nord de Madagascar — Région DIANA</p>
+          </div>
+          <div>
+            <h3>Navigation</h3>
+            <ul>
+              <li><a href="index.html">Accueil</a></li>
+              <li><a href="circuits.html">Circuits</a></li>
+              <li><a href="contact-simple.html">Contact</a></li>
+              <li><a href="contact.html">Réserver</a></li>
+            </ul>
+          </div>
+          <div>
+            <h3>Contact</h3>
+            <p>📧 votre@email.com</p>
+            <p>📱 +261 XX XX XXX XX</p>
+          </div>
+        </div>
+        <div class="footer-bas">
+          <p>© 2026 Diana Explore — Tous droits réservés</p>
+        </div>
+      </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script>
+      emailjs.init("nl1h-JAU0kytJBghD");
+
+      function envoyer() {
+        const nom = document.querySelector("#nom").value;
+        const email = document.querySelector("#email").value;
+        const indicatif = document.querySelector("#indicatif").value;
+        const telephone = document.querySelector("#telephone").value;
+        const pays = document.querySelector("#pays").value;
+        const message = document.querySelector("#message").value;
+
+        if (!nom || !email || !telephone || !pays || !message) {
+          alert("Veuillez remplir tous les champs obligatoires !");
+          return;
+        }
+
+        if (!/^\d{8,10}$/.test(telephone)) {
+          alert("Le numéro de téléphone doit contenir entre 8 et 10 chiffres !");
+          return;
+        }
+
+        emailjs.send("service_wn5vlvl", "template_2algfxb", {
+          name: nom,
+          email: email,
+          phone: indicatif + " " + telephone,
+          pays: pays,
+          message: message
+        }).then(function() {
+          alert("Message envoyé ! Nous vous répondrons sous 72h ouvrés. 🎉");
+          document.querySelector("#nom").value = "";
+          document.querySelector("#email").value = "";
+          document.querySelector("#telephone").value = "";
+          document.querySelector("#pays").value = "";
+          document.querySelector("#message").value = "";
+        }).catch(function() {
+          alert("Erreur lors de l'envoi. Réessayez !");
+        });
+      }
+    </script>
+
+  </body>
+</html>
