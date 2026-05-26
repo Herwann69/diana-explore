@@ -733,3 +733,11 @@ a.nav-logo {
   }
 
 }
+
+.circuit-detail-carte #premium .jour {
+  display: block;
+}
+
+.circuit-detail-carte #premium .jour p {
+  margin-bottom: 10px;
+}
